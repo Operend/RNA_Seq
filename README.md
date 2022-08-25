@@ -103,7 +103,7 @@ Parameters specific to the genome and annotation build used; these can be uncomm
 This script kicks off the Nextflow process on the SGE using the .config file specified in its sole argument.
 
 ## Accessing Result Files from Operend using FUSE
-Pipeline result files within Operend can be accessed as files on the file system via a FUSE mount using Operend's entityfs package. The entityfs package can be run from within a Singularity container or within a Conda environment. Note that although the Singularity container also allows for use /on any computer where Singularity is installed, the Environment Modules will not be available from within the container.
+Pipeline result files within Operend can be accessed as files on the file system via a FUSE mount using Operend's [entityfs](https://github.com/Operend/entityfs) package. The [entityfs](https://github.com/Operend/entityfs)  package can be run from within a Singularity container or within a Conda environment. Note that although the Singularity container also allows for use on any computer where Singularity is installed, [Environment Modules](http://modules.sourceforge.net/) will not be available from within the container.
 
 1. copy FUSE/entityfs_scc_template.ini to FUSE/entityfs.ini
 2. edit FUSE/entityfs.ini
@@ -127,7 +127,7 @@ Pipeline result files within Operend can be accessed as files on the file system
       - ```singularity shell --fusemount "container:/opt/operend/entityfs/entityfs.py --config {PATH_TO_THIS_DIR}/RNA_Seq_Op/FUSE/entityfs.ini /home/username/mountpoint" library://operend/libs/opyrnd.sif {NAME_OF_INSTANCE}```
       - from inside the container (assuming Singularity mounts the user's home directory) - ```cd /home/username/mountpoint```
 
-#### FUSE with entityfs and conda (from the FUSE directory)
+#### FUSE with [entityfs](https://github.com/Operend/entityfs)  and conda (from the FUSE directory)
 1) Load the miniconda module
    - ```module load miniconda```
 2) Create and activate conda envronment
