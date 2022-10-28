@@ -36,7 +36,7 @@ process createTSV{
     )
     script:
       if (params.source_operend)
-        template 'build_tsv_nf32.py'
+        template 'build_tsv_nf.py'
       else
         """
         cp ${params.infile} .
